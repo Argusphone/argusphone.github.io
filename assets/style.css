@@ -85,9 +85,31 @@ section { padding: 88px 0; }
 .ico.good { background: color-mix(in srgb, var(--good) 16%, transparent); color: var(--good); }
 .ico.warn { background: color-mix(in srgb, var(--warn) 16%, transparent); color: var(--warn); }
 
-/* Screenshots */
-.shots { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 20px 20px; margin: 0 -20px; scrollbar-width: thin; }
-.shots img { width: 250px; flex: none; border-radius: 22px; scroll-snap-align: center; box-shadow: var(--shadow); }
+/* Screenshots: feature tabs + one large shot on desktop, swipe carousel on phones */
+.showcase { display: grid; grid-template-columns: 1fr 360px; gap: 64px; align-items: center; max-width: 980px; margin: 0 auto; }
+.tabs { display: grid; gap: 8px; }
+.tabs button { all: unset; box-sizing: border-box; cursor: pointer; display: block; padding: 16px 20px; border-radius: 16px; border: 1px solid transparent; transition: background .2s, border-color .2s; }
+.tabs button b { display: block; font-size: 18px; color: var(--muted); transition: color .2s; }
+.tabs button span { display: block; font-size: 15px; color: var(--muted); max-height: 0; overflow: hidden; opacity: 0; transition: max-height .3s, opacity .3s, margin .3s; }
+.tabs button:hover b { color: var(--text); }
+.tabs button[aria-selected="true"] { background: var(--surface); border-color: var(--line); box-shadow: var(--shadow); }
+.tabs button[aria-selected="true"] b { color: var(--text); }
+.tabs button[aria-selected="true"] span { max-height: 60px; opacity: 1; margin-top: 4px; }
+.tabs button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+.stage { position: relative; width: 360px; aspect-ratio: 9 / 16; }
+.stage img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 28px; box-shadow: 0 30px 60px rgba(15,23,42,.25); opacity: 0; transform: scale(.97); transition: opacity .45s, transform .45s; }
+.stage img.active { opacity: 1; transform: none; }
+.dots { display: none; }
+@media (max-width: 860px) {
+  .showcase { display: block; }
+  .tabs { display: none; }
+  .stage { width: auto; aspect-ratio: auto; display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 -20px; padding: 8px calc(50vw - min(36vw, 150px)) 24px; }
+  .stage::-webkit-scrollbar { display: none; }
+  .stage img { position: static; flex: none; width: min(72vw, 300px); height: auto; opacity: 1; transform: none; scroll-snap-align: center; border-radius: 22px; box-shadow: var(--shadow); }
+  .dots { display: flex; justify-content: center; gap: 8px; }
+  .dots button { all: unset; cursor: pointer; width: 8px; height: 8px; border-radius: 99px; background: var(--line); transition: width .2s, background .2s; }
+  .dots button.on { width: 22px; background: var(--brand); }
+}
 
 /* Privacy band */
 .band { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
