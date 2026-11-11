@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Argus – Phone Security Log</title>
-<meta name="description" content="See who unlocked your phone, catch wrong PIN attempts, spot apps running in the background and track screen time. Free, no account, everything stays on your phone.">
+<meta name="description" content="See who unlocked your phone, catch wrong PIN attempts, lock your apps, spot apps running in the background and track screen time. Free, no account, everything stays on your phone.">
 <meta name="theme-color" content="#2F6FE0">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Argus – See everything your phone does">
-<meta property="og:description" content="Unlock history, wrong-PIN alerts, security check-up, screen time and app limits. Free, private, no account.">
+<meta property="og:description" content="Unlock history, wrong-PIN alerts with intruder photos, app lock, security check-up, screen time and app limits. Free, private, no account.">
 <meta property="og:image" content="assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="assets/style.css">
@@ -91,7 +91,7 @@
       <div class="card">
         <div class="ico good"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg></div>
         <h3>App lock</h3>
-        <p>Lock any app with your fingerprint or your phone's own screen lock. It locks again as soon as you leave.</p>
+        <p>Lock any app with your fingerprint, your phone's screen lock, or a separate Argus PIN only you know. It locks again as soon as you leave.</p>
       </div>
     </div>
   </div>
@@ -107,7 +107,7 @@
       <div class="tabs" role="tablist" aria-label="Features">
         <button role="tab" aria-selected="true" data-i="0"><b>Know your phone is safe</b><span>Wrong PINs, weak settings and odd apps, flagged as they happen.</span></button>
         <button role="tab" aria-selected="false" data-i="1"><b>Catch anyone guessing your PIN</b><span>Every wrong attempt logged, with an optional intruder photo.</span></button>
-        <button role="tab" aria-selected="false" data-i="2"><b>Lock any app with your fingerprint</b><span>Messages, photos or email open only for you, with your phone's own screen lock.</span></button>
+        <button role="tab" aria-selected="false" data-i="2"><b>Lock any app with your fingerprint</b><span>Messages, photos or email open only for you, with your fingerprint or your own Argus PIN.</span></button>
         <button role="tab" aria-selected="false" data-i="3"><b>Every unlock, counted</b><span>When your phone was opened, by the hour, including at night.</span></button>
         <button role="tab" aria-selected="false" data-i="4"><b>Fix weak spots in one tap</b><span>A clear score, and buttons that open the right setting.</span></button>
         <button role="tab" aria-selected="false" data-i="5"><b>See where your time goes</b><span>Screen time, opens, data and storage for every app.</span></button>
@@ -156,6 +156,8 @@
     <div class="faq">
       <details><summary>Is Argus really free?</summary><p>Yes. Every feature is free for everyone. Argus is supported by ads from Google, which never appear during setup, on the security log, on the app lock or on the block screen. You can watch one short video to go ad-free for 6 hours.</p></details>
       <details><summary>Does Argus upload my data?</summary><p>No. Your activity data is processed and stored only on your phone. The only data that leaves your phone is what Google's ad service needs to show ads, such as your advertising ID. See the <a href="privacy.html">privacy policy</a>.</p></details>
+      <details><summary>How does App lock work?</summary><p>Pick any app and Argus covers it each time it opens. Unlock it with your fingerprint, face or phone's screen lock, or choose a separate Argus PIN, so people who know your phone's PIN still can't get in. Turning a lock off asks for your unlock first. Argus stores your PIN only as a salted hash, never the PIN itself.</p></details>
+      <details><summary>Why does Argus say the intruder photo is paused?</summary><p>After your phone restarts or Argus updates, Android doesn't let apps use the camera in the background until you open them once. Argus shows a notification when this happens. Tap it, and intruder photos work again.</p></details>
       <details><summary>How does Argus know about wrong PIN attempts?</summary><p>You can let Argus be told about failed unlocks by turning on its device admin access. It uses this only to be told about wrong attempts. It can't lock, wipe or change your phone.</p></details>
       <details><summary>Why does Argus need usage access?</summary><p>Android already records when your phone is unlocked and which apps you use. Usage access lets Argus read those records to count unlocks and screen time. It can't see what you do inside apps.</p></details>
       <details><summary>Can I use Argus to monitor someone else?</summary><p>No. Argus is made for the person who owns the phone. It shows an ongoing notification while it's recording and can't be hidden.</p></details>
